@@ -1,0 +1,199 @@
+.home-shell {
+  min-height: 100svh;
+  display: grid;
+  place-items: center;
+  position: relative;
+  overflow: hidden;
+  background: #d9f273;
+  padding: 32px 18px;
+}
+.home-card {
+  width: min(100%, 490px);
+  padding: 45px 54px 32px;
+  background: #fbfaf3;
+  border: 1px solid #20251e;
+  border-radius: 7px;
+  box-shadow: 9px 9px 0 #20251e;
+  position: relative;
+  z-index: 1;
+  animation: arrive 0.45s ease both;
+}
+.brand-mark {
+  width: 44px;
+  height: 44px;
+  border: 1.5px solid #20251e;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font: 700 17px "Space Grotesk";
+  position: relative;
+  margin-bottom: 40px;
+  color: #ff765c;
+}
+.brand-mark span {
+  position: absolute;
+  font-size: 15px;
+  right: -8px;
+  top: -11px;
+}
+.eyebrow {
+  font:
+    500 10px "DM Mono",
+    monospace;
+  letter-spacing: 1.4px;
+  color: #71776c;
+  margin: 0 0 10px;
+}
+.home-card h1,
+.panel h1 {
+  font:
+    600 clamp(42px, 8vw, 65px)/0.98 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -3px;
+  margin: 0;
+  color: #20251e;
+}
+.home-card h1 em,
+.panel h1 em {
+  font-style: normal;
+  color: #748943;
+}
+.intro {
+  font-size: 14px;
+  color: #777e71;
+  margin: 13px 0 34px;
+}
+.field-label {
+  display: block;
+  font:
+    500 10px "DM Mono",
+    monospace;
+  letter-spacing: 1px;
+  margin: 0 0 8px;
+}
+.text-input {
+  height: 49px;
+  width: 100%;
+  border: 1px solid #d8dbce;
+  background: #fffefa;
+  border-radius: 4px;
+  padding: 0 14px;
+  outline: none;
+  color: #20251e;
+  transition:
+    border 0.2s,
+    box-shadow 0.2s;
+}
+.text-input:focus,
+.guess-input:focus {
+  border-color: #7b953d;
+  box-shadow: 0 0 0 3px #d9f27375;
+}
+.button {
+  min-height: 47px;
+  padding: 0 18px;
+  font:
+    600 11px "DM Mono",
+    monospace;
+  letter-spacing: 0.5px;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s,
+    background 0.15s;
+}
+.button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 0 #20251e;
+}
+.button span {
+  font-size: 16px;
+  margin-left: 9px;
+  vertical-align: -1px;
+}
+.primary {
+  background: #d9f273;
+  color: #20251e;
+}
+.primary:hover:not(:disabled) {
+  background: #c8ed5b;
+}
+.dark {
+  background: #20251e;
+  color: #f8f7ef;
+}
+.dark:hover:not(:disabled) {
+  background: #3b4431;
+}
+.full {
+  width: 100%;
+  margin-top: 14px;
+}
+.or {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  color: #858b7c;
+  text-transform: uppercase;
+  font:
+    10px "DM Mono",
+    monospace;
+  letter-spacing: 0.8px;
+  margin: 22px 0 14px;
+}
+.or i {
+  height: 1px;
+  background: #dedfd6;
+  flex: 1;
+}
+.join-row {
+  display: flex;
+  gap: 9px;
+}
+.code-input {
+  font:
+    500 13px "DM Mono",
+    monospace;
+  letter-spacing: 2px;
+}
+.footnote {
+  text-align: center;
+  color: #9a9e91;
+  font-size: 10px;
+  margin: 29px 0 0;
+}
+.notice {
+  font-size: 12px;
+  color: #b4503f;
+  margin: 12px 0 0;
+}
+.leave-summary {
+  text-align: center;
+}
+.leave-summary .brand-mark {
+  margin-left: auto;
+  margin-right: auto;
+}
+.leave-score {
+  margin: 30px 0 20px;
+  padding: 18px;
+  border: 1px solid #dfe1d4;
+  background: #eeeee3;
+  border-radius: 5px;
+  display: grid;
+  gap: 4px;
+}
+.leave-score span,
+.leave-score small {
+  font:
+    10px "DM Mono",
+    monospace;
+  letter-spacing: 1px;
+  color: #78806f;
+}
+.leave-score strong {
+  font:
+    600 48px/1 "Space Grotesk",
+    sans-serif;
+  letter-spacing: -2px;
+  color: #20251e;
+}

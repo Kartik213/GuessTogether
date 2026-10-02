@@ -1,0 +1,281 @@
+.game-shell {
+  max-width: none;
+  background:
+    linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    #121611;
+  background-size: 32px 32px;
+  color: var(--color-paper);
+}
+.topbar {
+  border-bottom: 1px solid #394536;
+}
+.wordmark {
+  color: #f4f7e8;
+  font-family: "Bungee", "Space Grotesk", sans-serif;
+  font-size: 15px;
+  letter-spacing: 0;
+}
+.wordmark b,
+.game-footer b {
+  color: #d6ff32;
+}
+.room-pill {
+  border: 1px solid #394536;
+  border-radius: 0;
+  color: var(--color-muted);
+  background: rgba(18, 22, 17, 0.88);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 9px) 0,
+    100% 9px,
+    100% 100%,
+    9px 100%,
+    0 calc(100% - 9px)
+  );
+}
+.room-pill strong {
+  color: #d6ff32;
+}
+.room-pill i {
+  background: #394536;
+}
+.profile-chip {
+  color: #f4f7e8;
+}
+.profile-chip > span {
+  background: #ff714b;
+  color: #090d1b;
+  border-radius: 0;
+  font-family: "DM Mono", monospace;
+}
+.leave-room {
+  color: var(--color-muted);
+}
+.leave-room:hover {
+  color: #ff714b;
+}
+.panel {
+  background: #202b21;
+  border: 1px solid #394536;
+  padding: 32px;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 20px) 0,
+    100% 20px,
+    100% 100%,
+    20px 100%,
+    0 calc(100% - 20px)
+  );
+  box-shadow: 8px 8px 0 rgba(214, 255, 50, 0.14);
+}
+.lobby-code,
+.result-banner,
+.leave-score {
+  background: #243025;
+  border: 1px solid #394536;
+  border-radius: 0;
+  color: #f4f7e8;
+}
+.lobby-code strong,
+.your-result > strong,
+.winner-name {
+  color: #f4f7e8;
+}
+.lobby-code .button {
+  min-height: 46px;
+  padding: 0 18px;
+  border: 1px solid #f4f7e8;
+  clip-path: none;
+  background: transparent;
+  color: #f4f7e8;
+  box-shadow: none;
+}
+.lobby-code .button:hover:not(:disabled) {
+  background: #d6ff32;
+  color: #090d1b;
+  border-color: #d6ff32;
+  box-shadow: none;
+}
+.final-actions .button.outline {
+  border: 1px solid #d6ff32;
+  clip-path: none;
+  background: transparent;
+  color: #d6ff32;
+  box-shadow: none;
+}
+.final-actions .button.outline:hover:not(:disabled) {
+  border-color: #3cf4ff;
+  background: #3cf4ff;
+  color: #090d1b;
+  box-shadow: none;
+}
+.lobby-code small,
+.players-head,
+.players-head > span + span,
+.round-label,
+.unit-hint,
+.result-question,
+.winner-label {
+  color: var(--color-muted);
+}
+.player-tile {
+  background: #1d281e;
+  border: 1px solid #394536;
+  border-radius: 0;
+  color: #f4f7e8;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 9px) 0,
+    100% 9px,
+    100% 100%,
+    9px 100%,
+    0 calc(100% - 9px)
+  );
+}
+.avatar {
+  border-radius: 0;
+  color: #090d1b;
+}
+.players-head,
+.leaderboard,
+.leader-row,
+.round-foot {
+  border-color: #394536;
+}
+.progress-track {
+  height: 7px;
+  background: #394536;
+  border-radius: 0;
+  margin: 14px 0 48px;
+  box-shadow: inset 0 0 0 1px rgba(244, 247, 232, 0.08);
+}
+.progress-track i {
+  background: linear-gradient(90deg, #d6ff32, #3cf4ff);
+  transition: width 0.8s linear;
+}
+.progress-track.urgent i {
+  background: #ff714b;
+  box-shadow: 0 0 12px rgba(255, 113, 75, 0.75);
+}
+.timer {
+  color: #d6ff32;
+  font-family: "Bungee", "Space Grotesk", sans-serif;
+  font-size: 16px;
+}
+.timer > span {
+  color: #3cf4ff;
+}
+.question-kicker {
+  color: #3cf4ff;
+}
+.question {
+  color: #f4f7e8 !important;
+}
+.guess-input {
+  color: #090d1b;
+  caret-color: #ff714b;
+}
+.guess-input::placeholder {
+  color: #626a7e;
+  opacity: 1;
+}
+.leave-score strong {
+  color: #d6ff32;
+  text-shadow: 2px 2px 0 #090d1b;
+}
+.leave-score span,
+.leave-score small {
+  color: #aeb9ab;
+}
+.answer-progress,
+.submitted-mark {
+  color: #aeb9ab;
+}
+.submitted-mark {
+  color: #d6ff32;
+}
+.tiny-avatars i {
+  border-color: #090d1b;
+  background: #394536;
+  color: #f4f7e8;
+}
+.tiny-avatars i.done {
+  background: #d6ff32;
+  color: #090d1b;
+}
+.points {
+  border-radius: 0;
+  background: #d6ff32;
+  color: #090d1b;
+}
+.board-heading,
+.leader-row,
+.score {
+  color: #f4f7e8;
+}
+.rank,
+.score small,
+.board-heading span {
+  color: #8f9b8d;
+}
+.waiting {
+  border-color: #3cf4ff;
+  color: #aeb9ab;
+  border-radius: 0;
+}
+.room-rules {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid #394536;
+}
+.room-rules .eyebrow {
+  margin-bottom: 12px;
+  color: #3cf4ff;
+}
+.room-rules > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.room-rules span {
+  min-height: 62px;
+  padding: 10px;
+  border-left: 2px solid #d6ff32;
+  background: rgba(214, 255, 50, 0.045);
+  color: #aeb9ab;
+  font: 9px/1.35 "DM Mono", monospace;
+  text-transform: uppercase;
+}
+.room-rules b {
+  display: block;
+  margin-bottom: 4px;
+  color: #f4f7e8;
+  font: 400 16px/1 "Bungee", "Space Grotesk", sans-serif;
+}
+.room-rules .mini-note {
+  margin: 15px 0 0;
+}
+.pulse {
+  background: #d6ff32;
+}
+.trophy {
+  border-radius: 0;
+  background: #ff714b;
+  color: #090d1b;
+  transform: rotate(45deg);
+}
+.trophy::first-letter {
+  display: inline-block;
+  transform: rotate(-45deg);
+}
+.game-footer {
+  border-color: #394536;
+  color: #8f9b8d;
+}
+.toast {
+  background: #ff714b;
+  color: #090d1b;
+  border-radius: 0;
+  box-shadow: 4px 4px 0 #d6ff32;
+}

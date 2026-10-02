@@ -1,0 +1,112 @@
+@media (max-width: 650px) {
+  .panel {
+    padding: 23px 18px;
+  }
+  .topbar-actions {
+    gap: 9px;
+  }
+  .leave-room {
+    font-size: 8px;
+  }
+  .home-card {
+    box-shadow:
+      7px 7px 0 #ff714b,
+      10px 10px 0 #090d1b;
+  }
+  .home-shell::after {
+    inset: 12px;
+  }
+  .landing-info {
+    display: none;
+  }
+  .room-rules > div {
+    grid-template-columns: 1fr;
+  }
+  .room-rules span {
+    min-height: auto;
+  }
+}
+@media (max-width: 1050px) {
+  .landing-info {
+    display: none;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-card {
+    animation: none;
+  }
+}
+
+.leave-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(18, 22, 17, 0.82);
+  backdrop-filter: blur(4px);
+}
+.leave-modal {
+  width: min(100%, 430px);
+  padding: 30px;
+  color: #f4f7e8;
+  background: #1b241b;
+  border: 1px solid #627052;
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+  box-shadow: 8px 8px 0 #090d1b;
+}
+.leave-modal-mark {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin-bottom: 22px;
+  place-items: center;
+  color: #090d1b;
+  background: #ff714b;
+  font: 400 22px "Bungee", sans-serif;
+  clip-path: polygon(0 0, 80% 0, 100% 20%, 100% 100%, 20% 100%, 0 80%);
+}
+.leave-modal .eyebrow {
+  color: #3cf4ff;
+}
+.leave-modal h2 {
+  margin: 0 0 12px;
+  color: #f4f7e8;
+  font: 400 clamp(28px, 5vw, 38px)/1 "Bungee", "Space Grotesk", sans-serif;
+  text-transform: uppercase;
+}
+.leave-modal p:not(.eyebrow) {
+  margin: 0;
+  color: var(--color-muted);
+  font-size: 14px;
+  line-height: 1.55;
+}
+.leave-modal-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 26px;
+}
+.leave-modal-actions .button {
+  flex: 1;
+}
+.leave-modal-actions .button.outline {
+  border: 2px solid #090d1b;
+  clip-path: none;
+  background: transparent;
+  color: #f4f7e8;
+  box-shadow: none;
+}
+.leave-modal-actions .button.outline:hover:not(:disabled) {
+  border-color: #ff714b;
+  background: #ff714b;
+  color: #090d1b;
+  box-shadow: none;
+}

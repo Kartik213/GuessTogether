@@ -1,0 +1,123 @@
+@media (max-width: 650px) {
+  .home-card {
+    padding: 34px 26px 28px;
+    box-shadow: 6px 6px 0 #20251e;
+  }
+  .home-card h1 {
+    font-size: 55px;
+  }
+  .game-shell {
+    padding: 0 19px;
+  }
+  .topbar {
+    height: 69px;
+  }
+  .wordmark {
+    font-size: 14px;
+  }
+  .room-pill {
+    gap: 6px;
+    font-size: 8px;
+    padding: 7px 8px;
+  }
+  .room-pill i {
+    margin: 0 1px;
+  }
+  .profile-chip {
+    font-size: 0;
+  }
+  .profile-chip > span {
+    font-size: 11px;
+  }
+  .panel {
+    margin: 38px auto 44px;
+  }
+  .lobby-panel h1 {
+    font-size: 53px;
+  }
+  .lobby-code {
+    padding: 13px;
+  }
+  .lobby-code strong {
+    font-size: 20px;
+    letter-spacing: 3px;
+  }
+  .lobby-code .button {
+    font-size: 9px;
+    padding: 0 10px;
+  }
+  .player-grid {
+    grid-template-columns: 1fr;
+  }
+  .player-tile {
+    padding: 9px 11px;
+  }
+  .question {
+    font-size: 39px !important;
+  }
+  .progress-track {
+    margin-bottom: 38px;
+  }
+  .guess-form {
+    flex-direction: column;
+  }
+  .guess-form .button {
+    height: 51px;
+  }
+  .guess-input {
+    flex: none;
+    height: 54px;
+  }
+  .round-foot {
+    align-items: flex-start;
+    gap: 9px;
+    flex-direction: column;
+  }
+  .results-columns {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .your-result {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    padding: 0;
+  }
+  .your-result .eyebrow {
+    grid-column: 1/-1;
+    margin: 0 0 8px;
+  }
+  .your-result > strong {
+    font-size: 25px;
+  }
+  .points {
+    margin: 0;
+  }
+  .final-panel {
+    grid-template-columns: 1fr;
+    gap: 27px;
+  }
+  .final-heading h1 {
+    font-size: 54px;
+  }
+  .winner-label {
+    margin-top: 15px;
+  }
+  .final-actions {
+    grid-column: 1;
+    flex-wrap: wrap;
+  }
+  .final-actions .button {
+    flex: 1;
+    min-width: 120px;
+  }
+  .game-footer {
+    font-size: 7px;
+  }
+  .toast {
+    left: 16px;
+    right: 16px;
+    bottom: 15px;
+    text-align: center;
+  }
+}
