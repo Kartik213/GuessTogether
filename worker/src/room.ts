@@ -10,14 +10,14 @@ import {
   REPLACED_SOCKET_CLOSE_CODE,
   ROUND_DURATION_MS,
   TOTAL_ROUNDS,
-} from "./constants";
+} from "../../shared/constants";
 import type {
   ClientAction,
   RoomState,
   SocketAttachment,
   Player,
   RoomSnapshot,
-} from "./game";
+} from "../../shared/game";
 import { json } from "./http";
 import { QUESTIONS } from "./questions";
 

@@ -1,5 +1,5 @@
 import { json, roomCode } from "./http";
-import { ROOM_CREATION_ATTEMPTS } from "./constants";
+import { ROOM_CREATION_ATTEMPTS } from "../../shared/constants";
 export { RoomDO } from "./room";
 
 export interface Env {

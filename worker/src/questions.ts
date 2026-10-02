@@ -1,4 +1,4 @@
-import type { Question } from "./game";
+import type { Question } from "../../shared/game";
 
 const entries: Array<[string, string, number, string]> = [
   ["everest", "How tall is Mount Everest?", 8849, "meters"],
