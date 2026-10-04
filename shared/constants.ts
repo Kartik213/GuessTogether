@@ -2,7 +2,6 @@ export const TOTAL_ROUNDS = 5;
 export const ROUND_DURATION_MS = 20_000;
 export const MAX_PLAYERS = 8;
 export const MAX_ROUND_SCORE = 1_000;
-export const MIN_SCORE_SCALE = 1;
 
 export const MIN_PLAYER_NAME_LENGTH = 2;
 export const MAX_PLAYER_NAME_LENGTH = 20;

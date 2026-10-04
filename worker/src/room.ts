@@ -7,7 +7,6 @@ import {
   MAX_ROUND_SCORE,
   MIN_GUESS,
   MIN_PLAYER_NAME_LENGTH,
-  MIN_SCORE_SCALE,
   REPLACED_SOCKET_CLOSE_CODE,
   ROUND_DURATION_MS,
   TOTAL_ROUNDS,
@@ -290,38 +289,34 @@ export class RoomDO {
     const submittedGuesses = room.players
       .map((player) => player.guess)
       .filter((guess): guess is number => guess !== undefined);
-    const closestDistance = Math.min(
-      ...submittedGuesses.map((guess) => Math.abs(guess - answer)),
-    );
-    const winningGuesses = submittedGuesses.filter(
-      (guess) => Math.abs(guess - answer) === closestDistance,
-    );
+    const bestDistance = submittedGuesses.length
+      ? Math.min(
+          ...submittedGuesses.map((guess) => Math.abs(guess - answer)),
+        )
+      : undefined;
     for (const player of room.players) {
-      player.roundScore =
+      const playerDistance =
         player.guess === undefined
+          ? undefined
+          : Math.abs(player.guess - answer);
+      player.roundScore =
+        playerDistance === undefined || bestDistance === undefined
           ? 0
-          : this.score(player.guess, winningGuesses);
+          : playerDistance === bestDistance
+            ? MAX_ROUND_SCORE
+            : Math.min(
+                MAX_ROUND_SCORE - 1,
+                bestDistance === 0
+                  ? 0
+                  : Math.round(
+                      (bestDistance / playerDistance) * MAX_ROUND_SCORE,
+                    ),
+              );
       player.score += player.roundScore;
     }
     delete room.endsAt;
     room.phase = "results";
     await this.persist();
-  }
-
-  private score(guess: number, winningGuesses: number[]) {
-    const distanceFromWinner = Math.min(
-      ...winningGuesses.map((winnerGuess) => Math.abs(guess - winnerGuess)),
-    );
-    if (distanceFromWinner === 0) return MAX_ROUND_SCORE;
-
-    const winnerScale = Math.max(
-      MIN_SCORE_SCALE,
-      ...winningGuesses.map((winnerGuess) => Math.abs(winnerGuess)),
-    );
-    return Math.max(
-      0,
-      Math.round((1 - distanceFromWinner / winnerScale) * MAX_ROUND_SCORE),
-    );
   }
 
   private snapshot(): RoomSnapshot {
