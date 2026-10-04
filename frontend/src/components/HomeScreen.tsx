@@ -81,7 +81,7 @@ export function HomeScreen({
       </div>
       <section className="landing-info" aria-label="About Guess Together">
         <p className="eyebrow">A FIVE-ROUND SOCIAL GAME</p>
-        <h2>One question.<br />Everyone guesses.</h2>
+        <h2>One question. <br />Everyone guesses.</h2>
         <p>
           Pick the closest number, score the most points, and earn the bragging
           rights before your friends do.

@@ -63,7 +63,7 @@ The Durable Object is the only authority for game state. The browser only render
 
 ## Scoring
 
-The closest submitted estimate earns **1,000 points**. Other estimates are scored relative to the closest guess, so a player who is close to the best estimate still earns a meaningful score. Tied closest guesses share the maximum score.
+The closest submitted estimate earns **1,000 points**. Other estimates receive a score based on the closest distance divided by their distance, multiplied by 1,000. Tied closest guesses share the maximum score. Submission speed does not affect points.
 
 ## Tech stack
 
