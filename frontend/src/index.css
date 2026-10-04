@@ -3,7 +3,7 @@
 :root {
   font-family: "DM Sans", sans-serif;
   color: #f4f7e8;
-  background: #090d1b;
+  background: #121611;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -16,8 +16,10 @@
 }
 body {
   margin: 0;
-  min-width: 320px;
-  min-height: 100vh;
+  min-width: 0;
+  min-height: 100dvh;
+  background: #121611;
+  overflow-x: clip;
 }
 button,
 input {
@@ -35,5 +37,6 @@ button:disabled {
   color: #1f2817;
 }
 #root {
-  min-height: 100vh;
+  min-height: 100dvh;
+  min-width: 0;
 }

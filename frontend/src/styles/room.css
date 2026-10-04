@@ -1,5 +1,5 @@
 .game-shell {
-  min-height: 100svh;
+  min-height: 100dvh;
   display: flex;
   flex-direction: column;
   max-width: 1440px;

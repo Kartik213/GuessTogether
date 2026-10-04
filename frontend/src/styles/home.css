@@ -1,5 +1,5 @@
 .home-shell {
-  min-height: 100svh;
+  min-height: 100dvh;
   display: grid;
   place-items: center;
   position: relative;

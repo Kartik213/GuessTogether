@@ -48,7 +48,7 @@ export function HomeScreen({
           disabled={isCreating}
           onClick={() => onCreate(name)}
         >
-          {isCreating ? "MAKING YOUR ROOM…" : "CREATE A ROOM"} <span>↗</span>
+          {isCreating ? "CREATING YOUR ROOM…" : "CREATE A ROOM"} <span>↗</span>
         </button>
         <div className="or">
           <i />

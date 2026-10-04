@@ -37,6 +37,287 @@
   }
 }
 
+@media (max-width: 700px) {
+  .home-shell {
+    place-items: start center;
+    padding: 24px 14px 32px;
+    overflow: clip;
+  }
+
+  .home-card {
+    width: 100%;
+    padding: 30px 22px 26px;
+    box-shadow:
+      6px 6px 0 #ff714b,
+      9px 9px 0 #090d1b;
+  }
+
+  .brand-mark {
+    margin-bottom: 28px;
+  }
+
+  .home-card h1 {
+    font-size: clamp(38px, 11vw, 52px);
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
+  }
+
+  .intro {
+    margin: 12px 0 28px;
+  }
+
+  .text-input {
+    height: 54px;
+  }
+
+  .join-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .join-row .text-input {
+    min-width: 0;
+  }
+
+  .join-row .button {
+    padding-inline: 14px;
+  }
+
+  .game-shell {
+    width: 100%;
+    min-width: 0;
+    padding: 0 14px;
+    background-size: 24px 24px;
+  }
+
+  .topbar {
+    height: auto;
+    min-height: 0;
+    display: grid;
+    grid-template-areas:
+      "brand actions"
+      "room room";
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 13px 10px;
+    padding: 12px 0 14px;
+    justify-content: stretch;
+  }
+
+  .wordmark {
+    grid-area: brand;
+    display: inline-block;
+    visibility: visible;
+    justify-self: start;
+    text-align: left;
+    min-width: 0;
+    font-size: 14px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
+  .topbar-actions {
+    grid-area: actions;
+    gap: 8px;
+    min-width: 0;
+  }
+
+  .leave-room {
+    font-size: 8px;
+  }
+
+  .profile-chip {
+    gap: 0;
+    font-size: 0;
+  }
+
+  .profile-chip > span {
+    width: 31px;
+    height: 31px;
+    font-size: 11px;
+  }
+
+  .room-pill {
+    grid-area: room;
+    display: flex;
+    justify-self: stretch;
+    justify-content: center;
+    max-width: 100%;
+    padding: 7px 9px;
+  }
+
+  .panel {
+    width: 100%;
+    margin: 28px auto 36px;
+    padding: 22px 16px;
+  }
+
+  .lobby-panel h1 {
+    font-size: clamp(38px, 12vw, 50px);
+    letter-spacing: -1px;
+  }
+
+  .lobby-code {
+    gap: 12px;
+    margin: 24px 0;
+    padding: 13px;
+  }
+
+  .lobby-code .button {
+    min-height: 40px;
+    padding-inline: 10px;
+  }
+
+  .player-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .room-rules > div {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .room-rules span {
+    min-height: 0;
+  }
+
+  .question {
+    font-size: clamp(32px, 10vw, 42px) !important;
+    letter-spacing: -1px !important;
+  }
+
+  .progress-track {
+    margin-bottom: 34px;
+  }
+
+  .guess-form {
+    flex-direction: column;
+  }
+
+  .guess-input,
+  .guess-form .button {
+    width: 100%;
+    height: 54px;
+  }
+
+  .round-foot {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 25px;
+  }
+
+  .results-columns,
+  .final-panel {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 22px;
+  }
+
+  .results-columns {
+    padding: 22px 0;
+  }
+
+  .result-banner {
+    padding: 22px 12px;
+  }
+
+  .result-banner h1 {
+    font-size: clamp(27px, 9vw, 40px);
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
+  }
+
+  .your-result {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    padding: 0;
+  }
+
+  .your-result .eyebrow {
+    grid-column: 1 / -1;
+    margin-bottom: 0;
+  }
+
+  .your-result > strong {
+    min-width: 0;
+    font-size: 25px;
+    overflow-wrap: anywhere;
+  }
+
+  .points {
+    margin: 0;
+  }
+
+  .board-heading {
+    gap: 8px;
+  }
+
+  .final-heading h1 {
+    font-size: clamp(48px, 15vw, 54px);
+  }
+
+  .final-actions {
+    grid-column: 1;
+    flex-wrap: wrap;
+  }
+
+  .final-actions .button {
+    flex: 1 1 130px;
+    min-width: 0;
+  }
+
+  .game-footer {
+    min-height: 42px;
+    font-size: 7px;
+  }
+
+  .game-footer span:last-child {
+    display: none;
+  }
+
+  .toast {
+    right: 14px;
+    bottom: 14px;
+    left: 14px;
+    text-align: center;
+  }
+
+  .leave-modal-backdrop {
+    padding: 16px;
+  }
+
+  .leave-modal {
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 380px) {
+  .home-shell {
+    padding-inline: 10px;
+  }
+
+  .home-card {
+    padding-inline: 18px;
+  }
+
+  .home-card h1 {
+    font-size: 38px;
+  }
+
+  .lobby-code {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .lobby-code .button {
+    width: 100%;
+  }
+
+  .leave-modal-actions {
+    flex-direction: column;
+  }
+}
+
 .leave-modal-backdrop {
   position: fixed;
   inset: 0;
