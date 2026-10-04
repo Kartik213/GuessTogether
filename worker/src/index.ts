@@ -11,7 +11,7 @@ export default {
   async fetch(request: Request, env: Env) {
     const url = new URL(request.url);
     const roomMatch = url.pathname.match(
-      /^\/api\/rooms\/([A-Z0-9]+)(?:\/(ws))?$/i,
+      /^\/api\/rooms\/([A-HJ-NP-Z2-9]{5})(?:\/(ws))?$/i,
     );
 
     if (url.pathname === "/api/rooms" && request.method === "POST") {

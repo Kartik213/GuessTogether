@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import {
   SOCKET_RECONNECT_BASE_DELAY_MS,
+  SOCKET_RECONNECT_MAX_ATTEMPTS,
   SOCKET_RECONNECT_MAX_DELAY_MS,
   SOCKET_RECONNECT_MAX_EXPONENT,
 } from "../../../shared/constants";
@@ -63,6 +64,10 @@ export function useRoomSocket({
         setIsReady(false);
         onStatus("disconnected");
         attempts += 1;
+        if (attempts > SOCKET_RECONNECT_MAX_ATTEMPTS) {
+          onError("Could not reconnect. Refresh the page to try again.");
+          return;
+        }
         reconnectTimer = window.setTimeout(
           connect,
           Math.min(

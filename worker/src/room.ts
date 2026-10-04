@@ -1,5 +1,6 @@
 import {
   HOST_RECONNECT_GRACE_MS,
+  EMPTY_ROOM_CLEANUP_DELAY_MS,
   MAX_PLAYERS,
   MAX_GUESS,
   MAX_PLAYER_NAME_LENGTH,
@@ -29,6 +30,14 @@ export class RoomDO {
       this.room = (await state.storage.get<RoomState>("room")) ?? null;
       if (!this.room) return;
       if (
+        this.room.players.length === 0 &&
+        this.room.emptyRoomEndsAt &&
+        this.room.emptyRoomEndsAt <= Date.now()
+      ) {
+        await this.deleteRoom();
+        return;
+      }
+      if (
         this.room.phase === "active" &&
         (this.room.endsAt ?? 0) <= Date.now()
       ) {
@@ -54,6 +63,14 @@ export class RoomDO {
   async alarm() {
     const room = this.room;
     if (!room) return;
+    if (
+      room.players.length === 0 &&
+      room.emptyRoomEndsAt &&
+      room.emptyRoomEndsAt <= Date.now()
+    ) {
+      await this.deleteRoom();
+      return;
+    }
     if (room.phase === "active" && (room.endsAt ?? 0) <= Date.now()) {
       await this.finishRound();
       return;
@@ -142,6 +159,7 @@ export class RoomDO {
       player.name = playerName;
     }
 
+    delete this.room.emptyRoomEndsAt;
     this.closeExistingPlayerSocket(playerId);
     const pair = new WebSocketPair();
     this.state.acceptWebSocket(pair[1]);
@@ -193,6 +211,8 @@ export class RoomDO {
       case "leave":
         await this.leaveRoom(player);
         break;
+      default:
+        throw new Error("Unknown action");
     }
 
     await this.persist();
@@ -231,6 +251,7 @@ export class RoomDO {
       room.questions = [];
       delete room.endsAt;
       delete room.hostGraceEndsAt;
+      room.emptyRoomEndsAt = Date.now() + EMPTY_ROOM_CLEANUP_DELAY_MS;
       return;
     }
 
@@ -366,6 +387,7 @@ export class RoomDO {
     const alarmTimes = [
       room.phase === "active" ? room.endsAt : undefined,
       room.hostGraceEndsAt,
+      room.emptyRoomEndsAt,
     ].filter((time): time is number => typeof time === "number");
     if (alarmTimes.length === 0) await this.state.storage.deleteAlarm();
     else await this.state.storage.setAlarm(Math.min(...alarmTimes));
@@ -376,6 +398,13 @@ export class RoomDO {
     if (connectedIds.has(room.hostId)) return;
     const nextHost = room.players.find((player) => connectedIds.has(player.id));
     if (nextHost) room.hostId = nextHost.id;
+  }
+
+  private async deleteRoom() {
+    this.room = null;
+    await this.state.storage.delete("room");
+    await this.state.storage.deleteAlarm();
+    this.sockets().forEach((socket) => socket.close(1000, "Room expired"));
   }
 
   private closeExistingPlayerSocket(playerId: string) {

@@ -58,6 +58,7 @@ export type RoomState = {
   questions: Question[];
   endsAt?: number;
   hostGraceEndsAt?: number;
+  emptyRoomEndsAt?: number;
 };
 
 export type SocketAttachment = { playerId: string };
