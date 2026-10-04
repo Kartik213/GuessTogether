@@ -205,13 +205,12 @@
     margin-top: 25px;
   }
 
-  .results-columns,
   .final-panel {
     grid-template-columns: minmax(0, 1fr);
     gap: 22px;
   }
 
-  .results-columns {
+  .round-results {
     padding: 22px 0;
   }
 
@@ -225,27 +224,34 @@
     overflow-wrap: anywhere;
   }
 
-  .your-result {
-    display: grid;
+  .result-table > .board-heading {
+    display: none;
+  }
+
+  .round-result-row {
     grid-template-columns: minmax(0, 1fr) auto;
-    align-items: center;
-    gap: 8px;
-    padding: 0;
+    grid-template-areas:
+      "player guess"
+      "score total";
+    gap: 4px 12px;
+    padding: 10px 0;
   }
 
-  .your-result .eyebrow {
-    grid-column: 1 / -1;
-    margin-bottom: 0;
+  .result-player {
+    grid-area: player;
   }
 
-  .your-result > strong {
-    min-width: 0;
-    font-size: 25px;
-    overflow-wrap: anywhere;
+  .result-guess {
+    grid-area: guess;
   }
 
-  .points {
-    margin: 0;
+  .result-score {
+    grid-area: score;
+    text-align: left;
+  }
+
+  .result-total {
+    grid-area: total;
   }
 
   .board-heading {

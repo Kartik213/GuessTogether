@@ -78,7 +78,6 @@
   color: #f4f7e8;
 }
 .lobby-code strong,
-.your-result > strong,
 .winner-name {
   color: #f4f7e8;
 }
@@ -118,6 +117,12 @@
 .result-question,
 .winner-label {
   color: var(--color-muted);
+}
+.round-label strong {
+  color: #d6ff32;
+}
+.round-label span {
+  color: #aeb9ab;
 }
 .player-tile {
   background: #1d281e;
@@ -204,15 +209,27 @@
   background: #d6ff32;
   color: #090d1b;
 }
-.points {
-  border-radius: 0;
-  background: #d6ff32;
-  color: #090d1b;
-}
 .board-heading,
 .leader-row,
-.score {
+.score,
+.round-result-row {
   color: #f4f7e8;
+}
+.round-result-row {
+  border-color: #394536;
+}
+.round-result-row.you {
+  background: rgba(214, 255, 50, 0.07);
+}
+.result-guess,
+.result-total {
+  color: #f4f7e8;
+}
+.result-score {
+  color: #d6ff32;
+}
+.result-table > .board-heading span {
+  color: #8f9b8d;
 }
 .rank,
 .score small,

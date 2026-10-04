@@ -73,26 +73,6 @@
     gap: 9px;
     flex-direction: column;
   }
-  .results-columns {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .your-result {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: center;
-    padding: 0;
-  }
-  .your-result .eyebrow {
-    grid-column: 1/-1;
-    margin: 0 0 8px;
-  }
-  .your-result > strong {
-    font-size: 25px;
-  }
-  .points {
-    margin: 0;
-  }
   .final-panel {
     grid-template-columns: 1fr;
     gap: 27px;

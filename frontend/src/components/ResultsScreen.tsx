@@ -1,12 +1,13 @@
-import { Leaderboard } from "./Leaderboard";
 import { TOTAL_ROUNDS } from "../../../shared/constants";
 import type { RoomSnapshot } from "../types/game";
 
 type Props = { room: RoomSnapshot; playerId: string; onNext: () => void };
 
 export function ResultsScreen({ room, playerId, onNext }: Props) {
-  const player = room.players.find((candidate) => candidate.id === playerId);
   const isHost = room.hostId === playerId;
+  const roundPlayers = [...room.players].sort(
+    (left, right) => (right.roundScore ?? 0) - (left.roundScore ?? 0),
+  );
   return (
     <section className="panel results-panel">
       <div className="result-banner">
@@ -21,19 +22,37 @@ export function ResultsScreen({ room, playerId, onNext }: Props) {
         </h1>
         <p className="result-question">{room.question?.question}</p>
       </div>
-      <div className="results-columns">
-        <div className="your-result">
-          <p className="eyebrow">YOUR GUESS</p>
-          <strong>{player?.guess?.toLocaleString() ?? "No guess"}</strong>
-          <span className="points">
-            +{(player?.roundScore ?? 0).toLocaleString()} <small>POINTS</small>
-          </span>
+      <div className="round-results">
+        <div className="board-heading">
+          ROUND RESULTS <span>AFTER ROUND {room.round + 1}</span>
         </div>
-        <div className="board-wrap">
+        <div className="result-table">
           <div className="board-heading">
-            LEADERBOARD <span>AFTER ROUND {room.round + 1}</span>
+            <span>PLAYER</span>
+            <span>GUESS</span>
+            <span>ROUND</span>
+            <span>TOTAL</span>
           </div>
-          <Leaderboard players={room.players} currentPlayerId={playerId} />
+          {roundPlayers.map((roundPlayer) => (
+            <div
+              className={`round-result-row ${roundPlayer.id === playerId ? "you" : ""}`}
+              key={roundPlayer.id}
+            >
+              <span className="result-player">
+                {roundPlayer.name}
+                {roundPlayer.id === playerId ? " (you)" : ""}
+              </span>
+              <strong className="result-guess">
+                {roundPlayer.guess?.toLocaleString() ?? "No guess"}
+              </strong>
+              <span className="result-score">
+                +{(roundPlayer.roundScore ?? 0).toLocaleString()}
+              </span>
+              <span className="result-total">
+                {roundPlayer.score.toLocaleString()}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
       {isHost ? (
