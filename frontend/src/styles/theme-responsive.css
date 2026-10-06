@@ -8,14 +8,6 @@
   .leave-room {
     font-size: 8px;
   }
-  .home-card {
-    box-shadow:
-      7px 7px 0 #ff714b,
-      10px 10px 0 #090d1b;
-  }
-  .home-shell::after {
-    inset: 12px;
-  }
   .room-rules > div {
     grid-template-columns: 1fr;
   }
@@ -23,18 +15,63 @@
     min-height: auto;
   }
 }
-@media (max-width: 1050px) {
+@media (max-width: 900px) {
   .home-shell {
     grid-template-areas:
-      "info"
-      "card";
-    gap: 36px;
+      "card"
+      "info";
+    grid-template-columns: minmax(0, 490px);
+    gap: 28px;
     place-content: center;
+    place-items: start center;
     min-width: 0;
+    padding: 28px 14px 32px;
+    overflow: visible;
   }
 
   .home-card {
     grid-area: card;
+    width: 100%;
+    min-width: 0;
+    padding: 30px 22px 26px;
+    box-shadow:
+      6px 6px 0 #ff714b,
+      9px 9px 0 #090d1b;
+  }
+
+  .home-shell::after {
+    inset: 12px;
+  }
+
+  .brand-mark {
+    margin-bottom: 28px;
+  }
+
+  .home-card h1 {
+    font-size: clamp(38px, 11vw, 52px);
+    letter-spacing: -1px;
+    overflow-wrap: anywhere;
+  }
+
+  .intro {
+    margin: 12px 0 28px;
+  }
+
+  .text-input {
+    height: 54px;
+  }
+
+  .join-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .join-row .text-input {
+    min-width: 0;
+  }
+
+  .join-row .button {
+    padding-inline: 14px;
   }
 
   .landing-info {
@@ -42,29 +79,9 @@
     grid-area: info;
     width: min(100%, 490px);
     min-width: 0;
+    padding: 0 8px;
     color: var(--color-muted);
     animation: arrive 0.45s 0.12s ease both;
-  }
-}
-@media (prefers-reduced-motion: reduce) {
-  .home-card {
-    animation: none;
-  }
-}
-
-@media (max-width: 700px) {
-  .home-shell {
-    grid-template-areas:
-      "card"
-      "info";
-    place-items: start center;
-    gap: 26px;
-    padding: 28px 14px 32px;
-    overflow: visible;
-  }
-
-  .landing-info {
-    padding: 0 8px;
   }
 
   .landing-info h2 {
@@ -99,47 +116,14 @@
   .builder-note {
     margin-top: 17px;
   }
-
+}
+@media (prefers-reduced-motion: reduce) {
   .home-card {
-    width: 100%;
-    min-width: 0;
-    padding: 30px 22px 26px;
-    box-shadow:
-      6px 6px 0 #ff714b,
-      9px 9px 0 #090d1b;
+    animation: none;
   }
+}
 
-  .brand-mark {
-    margin-bottom: 28px;
-  }
-
-  .home-card h1 {
-    font-size: clamp(38px, 11vw, 52px);
-    letter-spacing: -1px;
-    overflow-wrap: anywhere;
-  }
-
-  .intro {
-    margin: 12px 0 28px;
-  }
-
-  .text-input {
-    height: 54px;
-  }
-
-  .join-row {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-  }
-
-  .join-row .text-input {
-    min-width: 0;
-  }
-
-  .join-row .button {
-    padding-inline: 14px;
-  }
-
+@media (max-width: 700px) {
   .game-shell {
     width: 100%;
     min-width: 0;

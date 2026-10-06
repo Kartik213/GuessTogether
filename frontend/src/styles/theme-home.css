@@ -20,6 +20,10 @@
 }
 .home-shell {
   isolation: isolate;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 490px);
+  grid-template-areas: "info card";
+  gap: clamp(40px, 7vw, 110px);
+  place-content: center;
   background-color: #121611;
   background-image:
     radial-gradient(circle at 50% 47%, rgba(61, 82, 54, 0.42), transparent 34%),
@@ -52,10 +56,12 @@
   );
 }
 .landing-info {
-  position: absolute;
+  position: static;
+  grid-area: info;
   z-index: 1;
-  width: min(320px, calc(50vw - 300px));
-  left: max(32px, calc(50% - 590px));
+  width: min(320px, 100%);
+  min-width: 0;
+  padding-left: 20px;
   color: #aeb9ab;
   animation: arrive 0.45s 0.12s ease both;
 }

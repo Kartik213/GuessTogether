@@ -1,6 +1,8 @@
-name = "guess-together"
+name = "guesstogether"
 main = "src/index.ts"
 compatibility_date = "2026-09-27"
+workers_dev = true
+preview_urls = true
 assets = { directory = "../frontend/dist", binding = "ASSETS" }
 
 [durable_objects]
