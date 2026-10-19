@@ -6,6 +6,8 @@
 
 Create a room. Share the code. Make one estimate before the clock runs out.
 
+[`Read the engineering deep dive on Medium`](https://medium.com/@kartikg02013/building-real-time-systems-with-cloudflare-durable-objects-5e66a54e370f?sharedUserId=kartikg02013)
+
 <p>
   <img src="https://img.shields.io/badge/React-19-61DAFB?logo=react&logoColor=white" alt="React 19" />
   <img src="https://img.shields.io/badge/TypeScript-5-3178C6?logo=typescript&logoColor=white" alt="TypeScript" />
